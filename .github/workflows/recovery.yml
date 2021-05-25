@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
-  DEVICE: E
-  DT_LINK: https://github.com/popoASM/omni_device_10or_E.git
-  DT_PATH: device/10or/E
+  DEVICE: CPH1861
+  DT_LINK: https://github.com/kardebayan/android_device_CPH1861_TWRP.git
+  DT_PATH: device/oppo/CPH1861
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           tag_name: v0.5
-          name: test 4
+          name: test 5
           files: | 
-            work/out/target/product/E/recovery.img
+            work/out/target/product/CPH1861/recovery.img
             
