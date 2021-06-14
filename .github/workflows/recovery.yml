@@ -57,13 +57,12 @@ jobs:
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
              
-       - name: Release recovery image
-         uses: softprops/action-gh-release@v1
-         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       - uses: actions/upload-artifact@v2
          with:
-          tag_name: v0.5
-          name: test 5
-          files: | 
-            work/out/target/product/A7_Pro/recovery.img
-            
+          name: recoveryzip
+          path: work/out/target/product/A9_Pro/*.zip
+
+       - uses: actions/upload-artifact@v2
+         with:
+          name: recoveryimage
+          path: work/out/target/product/A9_Pro/recovery.img
