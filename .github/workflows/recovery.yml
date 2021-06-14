@@ -15,9 +15,9 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
   MANIFEST_BRANCH: twrp-10.0
-  DEVICE: A7_Pro
+  DEVICE: A9_Pro
   DT_LINK: https://github.com/mastersenpai05/TWRP-Device_tree-Umidigi-A7_Pro.git
-  DT_PATH: device/umidigi/A7_Pro
+  DT_PATH: device/hxy/A9_Pro
   TARGET: recoveryimage
   TZ: Asia/manila
 
