@@ -16,7 +16,7 @@ env:
   MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni.git
 #  MANIFEST_BRANCH: twrp-10.0
   DEVICE: juice
-  DT_LINK: https://github.com/mastersenpai05/device_xiaomi_juice-shrp.git
+  DT_LINK: https://github.com/mastersenpai05/recovery.git
   DT_PATH: device/xiaomi/juice
   TARGET: recoveryimage
   TZ: Asia/manila
