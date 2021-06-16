@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni.git
-#  MANIFEST_BRANCH: twrp-10.0
-  DEVICE: juice
-  DT_LINK: https://github.com/mastersenpai05/recovery.git
-  DT_PATH: device/xiaomi/juice
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST_BRANCH: twrp-10.0
+  DEVICE: A9_Pro
+  DT_LINK: https://github.com/mastersenpai05/TWRP-device_A9-Pro.git
+  DT_PATH: device/hxy/A9_Pro
   TARGET: recoveryimage
   TZ: Asia/manila
 
@@ -48,7 +48,8 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST --depth=1
+             repo init -u $MANIFEST
+             export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 50G && export CCACHE_COMPRESS=1
              repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
@@ -60,9 +61,9 @@ jobs:
        - uses: actions/upload-artifact@v2
          with:
           name: recoveryzip
-          path: work/out/target/product/juice/*.zip
+          path: work/out/target/product/A9_Pro/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
-          name: recoveryimage
-          path: work/out/target/product/juice/recovery.img
+          name: TWRP-UNOFFICIAL-A9_Pro
+          path: work/out/target/product/A9_Pro/recovery.img
