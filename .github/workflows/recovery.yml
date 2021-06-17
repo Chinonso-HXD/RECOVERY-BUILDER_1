@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
-  MANIFEST_BRANCH: twrp-10.0
-  DEVICE: A9_Pro
-  DT_LINK: https://github.com/mastersenpai05/TWRP-device_A9-Pro.git
-  DT_PATH: device/hxy/A9_Pro
+  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni
+#  MANIFEST_BRANCH: twrp-10.0
+  DEVICE: juice
+  DT_LINK: https://github.com/mastersenpai05/recovery
+  DT_PATH: device/xiaomi/juice
   TARGET: recoveryimage
   TZ: Asia/manila
 
@@ -60,10 +60,10 @@ jobs:
              
        - uses: actions/upload-artifact@v2
          with:
-          name: recoveryzip
-          path: work/out/target/product/A9_Pro/*.zip
+          name: 
+          path: work/out/target/product/juice/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
-          name: TWRP-UNOFFICIAL-A9_Pro
-          path: work/out/target/product/A9_Pro/recovery.img
+          name: shrp-UNOFFICIAL-juice
+          path: work/out/target/product/juice/recovery.img
