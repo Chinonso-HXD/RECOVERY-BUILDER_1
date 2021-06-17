@@ -15,9 +15,9 @@ on:
 env:
   MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni
 #  MANIFEST_BRANCH: twrp-10.0
-  DEVICE: juice
-  DT_LINK: https://github.com/mastersenpai05/recovery
-  DT_PATH: device/xiaomi/juice
+  DEVICE: A9_Pro
+  DT_LINK: https://github.com/senpaimaster05/recovery
+  DT_PATH: device/hxy/A9_Pro
   TARGET: recoveryimage
   TZ: Asia/manila
 
@@ -61,9 +61,9 @@ jobs:
        - uses: actions/upload-artifact@v2
          with:
           name: 
-          path: work/out/target/product/juice/*.zip
+          path: work/out/target/product/A9_Pro/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
-          name: shrp-UNOFFICIAL-juice
-          path: work/out/target/product/juice/recovery.img
+          name: shrp-UNOFFICIAL-A9_Pro
+          path: work/out/target/product/A9_Pro/recovery.img
