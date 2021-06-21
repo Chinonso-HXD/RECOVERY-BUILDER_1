@@ -15,9 +15,9 @@ on:
 env:
   MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni
 #  MANIFEST_BRANCH: twrp-10.0
-  DEVICE: A9_Pro
-  DT_LINK: https://github.com/senpaimaster05/recovery
-  DT_PATH: device/hxy/A9_Pro
+  DEVICE: A7_Pro
+  DT_LINK: https://github.com/mastersenpai05/umidigi_A7_Pro-TWRP.git
+  DT_PATH: device/umidigi/A7_Pro
   TARGET: recoveryimage
   TZ: Asia/manila
 
@@ -49,7 +49,6 @@ jobs:
              mkdir work
              cd work
              repo init -u $MANIFEST
-             export USECCACHE=1 && export CCACHEEXEC=/usr/bin/ccache && ccache -M 50G && export CCACHE_COMPRESS=1
              repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
@@ -60,10 +59,10 @@ jobs:
              
        - uses: actions/upload-artifact@v2
          with:
-          name: 
-          path: work/out/target/product/A9_Pro/*.zip
+          name: TWRP-A7_Pro
+          path: work/out/target/product/A7_Pro/*.zip
 
        - uses: actions/upload-artifact@v2
          with:
-          name: shrp-UNOFFICIAL-A9_Pro
-          path: work/out/target/product/A9_Pro/recovery.img
+          name: TWRP-A7_Pro
+          path: work/out/target/product/A7_Pro/recovery.img
