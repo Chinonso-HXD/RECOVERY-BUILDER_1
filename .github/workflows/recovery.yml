@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
-  DEVICE: X689B
-  DT_LINK: https://github.com/mastersenpai0405/twrp_device_infinix_Hot_10s
-  DT_PATH: device/infinix/X689B
+  DEVICE: dandelion
+  DT_LINK: https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion
+  DT_PATH: device/xiaomi/dandelion
   TARGET: recoveryimage
   TZ: Asia/manila
 
@@ -62,7 +62,7 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
-          tag_name: TWRP_10.0
-          name: TEST TWRP-X689B
+          tag_name: TWRP_11.0
+          name: TEST TWRP-DANDELION
           files: | 
-            work/out/target/product/X689B/recovery.img
+            work/out/target/product/dandelion/recovery.img
