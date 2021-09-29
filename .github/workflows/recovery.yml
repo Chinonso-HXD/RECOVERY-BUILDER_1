@@ -14,10 +14,10 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
-  DEVICE: dandelion
-  DT_LINK: https://github.com/senpaimaster05/twrp_device_xiaomi_dandelion
-  DT_PATH: device/xiaomi/dandelion
-  TARGET: recoveryimage
+  DEVICE: rosemary
+  DT_LINK: https://github.com/mastersenpai0405/android_device_rosemary
+  DT_PATH: device/xiaomi/rosemary
+  TARGET: bootimage
   TZ: Asia/manila
 
 jobs:
@@ -63,6 +63,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           tag_name: TWRP_11.0
-          name: TEST TWRP-DANDELION
+          name: TEST TWRP-Rosemary
           files: | 
-            work/out/target/product/dandelion/recovery.img
+            work/out/target/product/rosemary/boot.img
