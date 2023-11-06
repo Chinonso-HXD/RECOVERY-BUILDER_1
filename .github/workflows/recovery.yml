@@ -14,10 +14,10 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
-  DEVICE: rosemary
-  DT_LINK: https://github.com/mastersenpai0405/android_device_rosemary
-  DT_PATH: device/xiaomi/rosemary
-  TARGET: bootimage
+  DEVICE: x657c
+  DT_LINK: https://github.com/twrpdtgen/android_device_infinix_Infinix-X657C/tree/full_x657c_h6117-user-10-QP1A.190711.020-319582-release-keys
+  DT_PATH: device/Infinix/x657c
+  TARGET: recoveryimage
   TZ: Asia/manila
 
 jobs:
@@ -60,9 +60,9 @@ jobs:
        - name: Release recovery image
          uses: softprops/action-gh-release@v1
          env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.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}}
          with:
           tag_name: TWRP_11.0
           name: TEST
           files: | 
-            work/out/target/product/rosemary/boot.img
+            work/out/target/product/x657c/recovery.img
